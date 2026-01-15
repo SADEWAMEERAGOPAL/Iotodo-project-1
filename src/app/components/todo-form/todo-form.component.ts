@@ -25,9 +25,6 @@ export class TodoFormComponent implements OnInit {
         todoitem: this.todoForm.value.todoitem,
         todoid: Date.now().toString()
       }
-
-
-
       this.emittododata.emit(gettodoObj)
       this.todoForm.reset()
       this._snackbar.open('new todo item Added Successfully', 'Close', {
