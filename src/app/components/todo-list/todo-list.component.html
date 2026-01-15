@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body">
+        <ng-container *ngIf="todoArr.length>0; else Notodo">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center"
+                    *ngFor="let todo of todoArr">
+                    <strong>
+                        {{todo.todoitem}}
+                    </strong>
+                    <div>
+                        <button mat-mini-fab color="primary" class="mr-1">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-mini-fab color="warn">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
+        </ng-container>
+        <ng-template #Notodo>
+            <p class="alert alert-warning text-center">No Todo!!!</p>
+        </ng-template>
+    </div>
+</div>
