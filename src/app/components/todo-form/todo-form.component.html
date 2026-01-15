@@ -1,0 +1,19 @@
+
+<div class="card">
+    <div class="card-body">
+        <form #todoForm="ngForm" (ngSubmit)="OnAddTodo()">
+            <div class="example-container">
+                <mat-form-field appearance="fill" class="w-100 mb-3">
+                    <mat-label>Todo-Item</mat-label>
+                    <input matInput ngModel name="todoitem" #todoitem="ngModel" required>
+
+                    <strong class="text-danger" *ngIf="todoitem.touched && todoitem.hasError('required')">
+                        Todo item is required field!!!
+                    </strong>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary" class="w-100">Add Todo</button>
+
+        </form>
+    </div>
+</div>
