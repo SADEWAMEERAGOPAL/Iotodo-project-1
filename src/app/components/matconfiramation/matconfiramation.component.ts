@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-matconfiramation',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatconfiramationComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _matdialogref:MatDialogRef<MatconfiramationComponent>
+  //  private _matDailogref=ma
+  ) { }
 
   ngOnInit(): void {
   }
+   onclose(flag:boolean){
+    this._matdialogref.close(flag);
+  }
+
 
 }
