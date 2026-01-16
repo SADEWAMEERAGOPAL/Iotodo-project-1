@@ -8,7 +8,7 @@
                         {{todo.todoitem}}
                     </strong>
                     <div>
-                        <button mat-mini-fab color="primary" class="mr-1">
+                        <button mat-mini-fab color="primary" class="mr-1" (click)="onedit(todo)">
                             <mat-icon>edit</mat-icon>
                         </button>
                         <button mat-mini-fab color="warn" (click)="onremove(todo)">

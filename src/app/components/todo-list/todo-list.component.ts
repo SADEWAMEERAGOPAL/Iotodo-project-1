@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Itodo } from 'src/app/const/todo';
@@ -11,6 +11,7 @@ import { MatconfiramationComponent } from '../matconfiramation/matconfiramation.
 })
 export class TodoListComponent implements OnInit {
 @Input() todoArr!: Array<Itodo>
+@Output()sendeditid:EventEmitter<Itodo>=new EventEmitter<Itodo>()
  
   
   constructor(
@@ -43,5 +44,7 @@ export class TodoListComponent implements OnInit {
 
 })
   }
-
+onedit(todo:Itodo){
+   this.sendeditid.emit(todo)
+}
 }

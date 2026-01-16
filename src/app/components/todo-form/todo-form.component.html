@@ -12,7 +12,8 @@
                     </strong>
                 </mat-form-field>
             </div>
-            <button mat-raised-button color="primary" class="w-100">Add Todo</button>
+            <button mat-raised-button color="primary" class="w-100"  *ngIf="!iseditbtn">Add Todo</button>
+            <button mat-raised-button color="primary" class="w-100" *ngIf="iseditbtn" type="button" (click)="Onupdate()">update Todo</button>
 
         </form>
     </div>

@@ -7,7 +7,7 @@ import { Itodo } from 'src/app/const/todo';
   styleUrls: ['./todo-dashboard.component.css']
 })
 export class TodoDashboardComponent implements OnInit {
-
+sendid !:Itodo
   todoArr: Array<Itodo>=[
        {
        todoid: "1768242635372",
@@ -36,5 +36,12 @@ export class TodoDashboardComponent implements OnInit {
   OnTodoData(todo: Itodo){
      this.todoArr.push(todo)
   }
+geteditid(edittodo:Itodo){
+this.sendid=edittodo
 
+}
+onupdateobj(updateobj:Itodo){
+  let findeindex= this.todoArr.findIndex(tod=>tod.todoid===updateobj.todoid)
+  this.todoArr[findeindex]=updateobj
+}
 }
